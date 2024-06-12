@@ -2,13 +2,25 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+env:
+  - name: SEVER
+    value: "0.0.0.0"
+  - name: PORT
+    value: "8080"
+  - name: SERVER_LOKI
+    value: "172.19.20.2"
+  - name: PORT_LOKI
+    value: "3100"
+  - name: JOB
+    value: "example-app"
+
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: ghcr.io/suriyaruk/log-loki
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "main"
 
 imagePullSecrets: []
 nameOverride: ""
